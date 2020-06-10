@@ -91,11 +91,11 @@ def loops_2():
     for y in range(10):
         list_2.append('*')
 
-    biglist = []
+    biglist_2 = []
     for z in range(10):
-        biglist.append(list_2)
+        biglist_2.append(list_2)
 
-    return biglist
+    return biglist_2
 
 
 def loops_3():
@@ -116,10 +116,17 @@ def loops_3():
     ]
     remember that range(10) produces a list of numbers from 0...9
     So for every step produced by `for i in range(10):` i is a different number
-    TIP: notice that this needs to to return strings of numbers,
+k
          so call str(number) to cast.
     """
-    return None
+    list_3 = []
+    for a in range(10):
+
+    biglist_3 = []
+    for b in range(10):
+        biglist_3.append(list_3)
+
+    return biglist_3
 
 
 def loops_4():
