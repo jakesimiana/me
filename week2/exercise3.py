@@ -147,7 +147,7 @@ def loops_4():
     for j in range(10):
         list_4.append(j)
     biglist_4 = []
-    for k in range(10):
+    for k in range(9):
         biglist_4.append(list_4)
     return biglist_4
    
@@ -239,7 +239,7 @@ def loops_7():
         start = 4 - i
         end = 5 + i
         for x in range(start, end):
-            pyramid[i][x] = start
+            pyramid[i][x] = star
     return pyramid
 
 
