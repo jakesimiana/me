@@ -179,7 +179,11 @@ def loops_5():
     you'll come to see the pros and cons of each over time.
     """
 
-    return None
+     for i in range(10):
+        for j in range(5):
+            coordinates1.append("(i" + str(i) + ", j" + str(j) + ')')
+    coordinates2 = [coordinates1[i:i+5] for i in range(0,len(coordinates1), 5)]
+    return coordinates2
 
 
 def loops_6():
@@ -202,7 +206,10 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    return None
+    list1 = [str(i) for i in range(10)]
+    for x in range(len(list1)+1):
+        list2 = [list1[:i+1] for i in range(0,x)]
+    return list2
 
 
 def loops_7():
@@ -226,7 +233,13 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    return None
+    pyramid = [[gap for n in range(9)] for i in range(5)]
+    for i in range(0,5):
+        start = 4 - i
+        end = 5 + i
+        for x in range(start, end):
+            pyramid[i][x] = start
+    return pyramid
 
 
 def lp(some_kind_of_list, exercise_name):
