@@ -87,7 +87,13 @@ def loops_2():
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
           ]
     """
-    return None
+    list_2 = []
+    for y in range(10):
+        list_2.append('*")
+
+    biglist = [list_2*10]
+
+    return biglist
 
 
 def loops_3():
