@@ -145,7 +145,7 @@ def loops_4():
     """
     list_4 = []
     for j in range(10):
-        list_4.append(j)
+        list_4.append(str(j))
     biglist_4 = []
     for k in range(9):
         biglist_4.append(list_4)
