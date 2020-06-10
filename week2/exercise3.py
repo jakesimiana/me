@@ -116,19 +116,15 @@ def loops_3():
     ]
     remember that range(10) produces a list of numbers from 0...9
     So for every step produced by `for i in range(10):` i is a 
-    different number so call str(number) to cast."""
+    different number so call str(number) to cast. """
 
-"""
     list_3 = []
-    for a in range(10):
+    for i in range(10):
+        x = str(i)
+        list_3.append([x,x,x,x,x,x,x,x,x,x])
 
-    biglist_3 = []
-    for b in range(10):
-        biglist_3.append(list_3)
+    return list_3
 
-    return biglist_3
-"""
-    return None
 
 
 def loops_4():
@@ -148,7 +144,16 @@ def loops_4():
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     ]
     """
-    return None
+    list_4 = []
+    for j in range(10):
+        list_4.append(j)
+        
+
+    biglist_4 = []
+    for k in range(9):
+        biglist_4.append(list_4)
+    return biglist_4
+   
 
 
 def loops_5():
@@ -175,6 +180,7 @@ def loops_5():
         "There are {} green bottles".format(8)
     you'll come to see the pros and cons of each over time.
     """
+    
     return None
 
 
