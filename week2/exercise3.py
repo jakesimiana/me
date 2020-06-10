@@ -7,11 +7,11 @@ def is_odd(a_number):
 
     Look into modulo division using the '%' operator as one way of doing this.
     """
-if a_number % 2 = 0:
-    return False
-      
-else:
-    return True
+    if a_number%2 == 0:
+        answer = False
+    else:
+        answer = True
+    return answer
 
 
 def fix_it(moves=True, should_move=True):
@@ -29,7 +29,18 @@ def fix_it(moves=True, should_move=True):
     Most people write this function with 4 return statements. 
     As an extra challenge, see if you can get that down to three.
     """
-    return None
+    if moves == True:
+        if should_move == True:
+            return "No Problem"
+        else:
+            return "WD-40"
+
+    else:
+        if should_move == True:
+            return "WD-40"
+        else:
+            return "Duct Tape"
+
 
 
 def loops_1a():
