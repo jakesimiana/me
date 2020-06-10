@@ -52,7 +52,7 @@ def loops_1a():
     """
     stars = []
     for x in range(10):
-        append.stars('*')
+        stars.append('*')
     return stars
 
 
