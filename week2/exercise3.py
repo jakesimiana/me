@@ -177,7 +177,7 @@ def loops_5():
         "There are {} green bottles".format(8)
     you'll come to see the pros and cons of each over time.
     """
-
+    coordinates1 = []
     for i in range(10):
         for j in range(5):
             coordinates1.append("(i" + str(i) + ", j" + str(j) + ')')
