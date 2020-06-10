@@ -232,6 +232,8 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
+    star = "*"
+    gap = " "
     pyramid = [[gap for n in range(9)] for i in range(5)]
     for i in range(0,5):
         start = 4 - i
