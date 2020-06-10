@@ -122,7 +122,6 @@ def loops_3():
     for i in range(10):
         x = str(i)
         list_3.append([x,x,x,x,x,x,x,x,x,x])
-
     return list_3
 
 
@@ -179,7 +178,7 @@ def loops_5():
     you'll come to see the pros and cons of each over time.
     """
 
-     for i in range(10):
+    for i in range(10):
         for j in range(5):
             coordinates1.append("(i" + str(i) + ", j" + str(j) + ')')
     coordinates2 = [coordinates1[i:i+5] for i in range(0,len(coordinates1), 5)]
