@@ -89,9 +89,11 @@ def loops_2():
     """
     list_2 = []
     for y in range(10):
-        list_2.append('*")
+        list_2.append('*')
 
-    biglist = [list_2*10]
+    biglist = []
+    for z in range(10):
+        biglist.append(list_2)
 
     return biglist
 
