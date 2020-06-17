@@ -1,1 +1,2 @@
 TODO: Reflect on what you learned this week and what is still unclear.
+I learnt how to effectively use while loops while also learning what algorithms are and how they can be incorporated into very handy tools in python programming

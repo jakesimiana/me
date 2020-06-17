@@ -24,7 +24,7 @@ def lone_ranger(start, stop, step):
 
     Look up the docs for range() and wrap it in a 1:1 way
     """
-    return range(start,stop, step)  
+    return loop_ranger(start,stop, step)  
 
 def two_step_ranger(start, stop):
     """Make a range that steps by 2.
@@ -32,7 +32,7 @@ def two_step_ranger(start, stop):
     Sometimes you want to hide complexity.
     Make a range function that always has a step size of 2
     """
-    return range(start,stop, 2)
+    return loop_ranger(start,stop, 2)
    
 
 
@@ -49,9 +49,9 @@ def stubborn_asker(low, high):
     while True:
         if low < numberask < high:
             print('Well done '+str(numberask)+' is between '+str(low)+' and '+str(high))
-            return
+            return numberask
         else:
-            numberask = int(input('Sorry this numeber is invalid, please enter a number between '+str(low)+' and '+str(high)+': ') )
+            numberask = int(input('Sorry this number not in range, please enter a number between '+str(low)+' and '+str(high)+': ') )
     
 
     
@@ -64,14 +64,14 @@ def not_number_rejector(message):
     (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
-    numberask = (input('Hi please enter a number: '))
+    numberask = str(input('Hi please enter a number: '))
 
     while True:
         if numberask.isdigit():
             print('Thank you ' + str(numberask) + ' is a beautiful number')
-            return
+            return int(numberask)
         else:
-            numberask = input(str(numberask) + ' is not a number, please re-enter a new number: ')
+            numberask = str(input(str(numberask) + ' is not a number, please re-enter a new number: '))
     
 
 
@@ -83,14 +83,14 @@ def super_asker(low, high):
     Try to call at least one of the other functions to minimise the
     amount of code.
     """
-    number = input('Enter a number between '+str(low)+' and '+str(high)+': ')
+    
     while True:
-        if number.isdigit():
-            stubborn_asker(low, high)
-            return
-            
+        number = not_number_rejector('Please give me a number: ')
+        if low < number < high:
+            print('Well done '+str(number)+' is between '+str(low)+' and '+str(high))
+            return number
         else:
-            number = input(str(number) + ' is not a number, please re-enter a new number: ')
+            numberask = int(input('Sorry this number not in range, please enter a number between '+str(low)+' and '+str(high)+': ') )
 
 
 if __name__ == "__main__":
