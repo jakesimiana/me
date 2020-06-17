@@ -24,8 +24,7 @@ def lone_ranger(start, stop, step):
 
     Look up the docs for range() and wrap it in a 1:1 way
     """
-    return range(start, stop, step)
-
+    return range(start, stop, step)  
 
 def two_step_ranger(start, stop):
     """Make a range that steps by 2.
@@ -44,13 +43,13 @@ def stubborn_asker(low, high):
     until you get a number that you think is OK
 
     Look up the docs for input
-    """
-   
-        
+    
+    numberask = int(input('Enter a number: '))  
+    while numberask < low or numberask > high:
+        numerask = int(input('Enter a new number: ')"""
 
-
-    return None
-
+    return none
+    
 
 def not_number_rejector(message):
     """Ask for a number repeatedly until actually given one.
