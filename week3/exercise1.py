@@ -43,12 +43,18 @@ def stubborn_asker(low, high):
     until you get a number that you think is OK
 
     Look up the docs for input
-    
-    numberask = int(input('Enter a number: '))  
-    while numberask < low or numberask > high:
-        numerask = int(input('Enter a new number: ')"""
+    """
 
-    return none
+    numberask = int(input('Enter a number between '+str(low)+' and '+str(high)+': '))  
+    while True:
+        if low < numberask < high:
+            print('Well done '+str(numberask)+' is between '+str(low)+' and '+str(high))
+            return
+        else:
+            numberask = int(input('Sorry this numeber is invalid, please enter a number between '+str(low)+' and '+str(high)+': ') )
+    
+
+    
     
 
 def not_number_rejector(message):
@@ -58,7 +64,15 @@ def not_number_rejector(message):
     (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
-    return None
+    numberask = (input('Hi please enter a number: '))
+
+    while True:
+        if numberask.isdigit():
+            print('Thank you ' + str(numberask) + ' is a beautiful number')
+            return
+        else:
+            numberask = input(str(numberask) + ' is not a number, please re-enter a new number: ')
+    
 
 
 def super_asker(low, high):
@@ -69,7 +83,14 @@ def super_asker(low, high):
     Try to call at least one of the other functions to minimise the
     amount of code.
     """
-    return None
+    number = input('Enter a number between '+str(low)+' and '+str(high)+': ')
+    while True:
+        if number.isdigit():
+            stubborn_asker(low, high)
+            return
+            
+        else:
+            number = input(str(number) + ' is not a number, please re-enter a new number: ')
 
 
 if __name__ == "__main__":
