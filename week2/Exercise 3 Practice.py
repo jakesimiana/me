@@ -118,13 +118,7 @@ def loops_3():
     So for every step produced by `for i in range(10):` i is a 
     different number so call str(number) to cast. """
 
-    biglist = []
-    
-    for i in range(10):
-        x = str(i)
-        biglist.append([x,x,x,x,x,x,x,x,x,x])
-    return biglist
-    
+
 
 
 
@@ -179,13 +173,18 @@ def loops_5():
         "There are {} green bottles".format(8)
     you'll come to see the pros and cons of each over time.
     """
+   coordinate_1 = list(range(10))
+   coordinate_2 = list(range(3))
+    for i in range(10)
+        coordinate_1.append('i'+str[i]+',')
     
-    coordinates1 = []
-    for i in range(10):
-        for j in range(5):
-            coordinates1.append('(i'+str(i)+', j'+str(j)+')')
-    coordinates2 = [coordinates1[k:k+5] for k in range(0,len(coordinates1),5)]
-    return coordinates2
+    print coordinate_1
+
+
+
+
+
+
 
 def loops_6():
     """Make a wedge of numbers.
@@ -207,16 +206,6 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    wedge = []
-    for maxNum in range(1, 11):
-        tempList = []
-        for num in range(maxNum):
-            tempList.append(str(num))
-        wedge.append(tempList)
-
-    
-    return wedge
-   
 
 
 def loops_7():
@@ -240,15 +229,6 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    star = "*"
-    gap = " "
-    pyramid = [[gap for n in range(9)] for i in range(5)]
-    for i in range(0,5):
-        start = 4 - i
-        end = 5 + i
-        for x in range(start, end):
-            pyramid[i][x] = star
-    return pyramid
 
 
 def lp(some_kind_of_list, exercise_name):
