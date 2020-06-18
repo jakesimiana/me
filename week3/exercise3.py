@@ -25,14 +25,15 @@ def advancedGuessingGame():
   Remember to think modular. Try to keep your functions small and single
   purpose if you can!
   """
+  low = str(-9^9)
   def not_number_rejector(message):
     numberask = str(input(message))
 
     while True:
-        if numberask.isdigit():
+        if numberask.isdigit() and int(numberask) >= int(low):
             return int(numberask)
         else:
-            numberask = str(input(str(numberask) + " is not a number, \n" + message))
+            numberask = str(input(str(numberask) + " is not a valid bound number, \n" + message))
 
   print("\nWelcome to the guessing game!")
   print("You're going to guess a number between _ and _?")
