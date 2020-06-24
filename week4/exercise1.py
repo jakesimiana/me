@@ -33,17 +33,24 @@ def get_some_details():
          dictionary, you'll need integer indeces for lists, and named keys for
          dictionaries.
     """
+    
     json_data = open(LOCAL + "/lazyduck.json").read()
 
     data = json.loads(json_data)
-    return {"lastName": None, "password": None, "postcodePlusID": None}
+    LN = data["results"][0]["name"]["last"]
+    PW = data["results"][0]["login"]["password"]
+    PC = int(data["results"][0]["location"]["postcode"])+int(data["results"][0]["id"]["value"])
+
+
+    return {"lastName": LN, "password": PW, "postcodePlusID": PC}
+
 
 
 def wordy_pyramid():
     """Make a pyramid out of real words.
 
     There is a random word generator here:
-    http://api.wordnik.com/v4/words.json/randomWords?api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5&minLength=10&maxLength=10&limit=1
+    https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word
     The arguments that the generator takes is the minLength and maxLength of the word
     as well as the limit, which is the the number of words. 
     Visit the above link as an example.
@@ -74,7 +81,25 @@ def wordy_pyramid():
     ]
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &minLength=
     """
-    pass
+    #Creating the list of numbers that correspond to the word length
+    Numberlist = list(range(3,21,2))
+    Numberlist.extend(list(range(20,2,-2)))
+    
+    NumberPyramid = []
+    url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={len}"
+    
+    #Go through all the numbers and search the word length of each number in the table
+    for i in Numberlist:
+        fullurl = url.format(len=i)
+        #Search URL
+        pull = requests.get(fullurl)   
+        #Pull the word data and change it to text     
+        data = pull.text
+        NumberPyramid.append(data)
+    return NumberPyramid
+
+
+
 
 
 def pokedex(low=1, high=5):
@@ -92,12 +117,23 @@ def pokedex(low=1, high=5):
          variable and then future access will be easier.
     """
     template = "https://pokeapi.co/api/v2/pokemon/{id}"
-
-    url = template.format(id=5)
-    r = requests.get(url)
-    if r.status_code is 200:
-        the_json = json.loads(r.text)
-    return {"name": None, "weight": None, "height": None}
+    Plist = list(range(low,high))
+    Pokemon = []
+    
+    for i in Plist:
+        url = template.format(id=i)
+        r = requests.get(url)
+        #Internet connection test
+        if r.status_code is 200:
+            the_json = json.loads(r.text)
+            #Find max height
+            findmax
+            N = pull["results"][0]["name"]["last"]
+            W = pull["results"][0]["name"]["last"]
+            H = pull["results"][0]["name"]["last"]
+        else:
+            pass
+    return {"name": N, "weight": W, "height": H}
 
 
 def diarist():
