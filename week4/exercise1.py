@@ -158,12 +158,11 @@ def diarist():
     #Open File and find M10 P1 instances
     data = open(LOCAL + "/Trispokedovetiles(laser).gcode").read()
     Laser_number = data.count("M10 P1")
-
+    
     #Write it to file
-    file_path = LOCAL+"/lasers.pew" 
     mode = "w"  # from the docs
-    laser = open(file_path, mode)
-    laser.write(Laser_number)
+    laser = open("/lasers.pew", mode)
+    laser.write(str(Laser_number))
     laser.close()
 
     pass
