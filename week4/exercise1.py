@@ -160,7 +160,7 @@ def diarist():
     Laser_number = data.count("M10 P1")
 
     #Write it to file
-    file_path = LOCAL+"/laser.pew" 
+    file_path = LOCAL+"/lasers.pew" 
     mode = "w"  # from the docs
     laser = open(file_path, mode)
     laser.write(Laser_number)
