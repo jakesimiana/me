@@ -116,23 +116,27 @@ def pokedex(low=1, high=5):
          get very long. If you are accessing a thing often, assign it to a
          variable and then future access will be easier.
     """
+
+    #Create Initial Lists
     template = "https://pokeapi.co/api/v2/pokemon/{id}"
-    Plist = list(range(low,high))
-    Pokemon = []
+    Height = 0
     
-    for i in Plist:
+    #Fetch All Pokemon Heights
+    for i in range(low,high):
         url = template.format(id=i)
         r = requests.get(url)
+
         #Internet connection test
         if r.status_code is 200:
             the_json = json.loads(r.text)
-            #Find max height
-            findmax
-            N = pull["results"][0]["name"]["last"]
-            W = pull["results"][0]["name"]["last"]
-            H = pull["results"][0]["name"]["last"]
-        else:
-            pass
+            HeightNew = the_json["height"]
+            #Max height updator loop
+            if HeightNew > Height:
+                Height = HeightNew
+                N = the_json["name"]
+                W = the_json["weight"]
+                H = the_json["height"]
+
     return {"name": N, "weight": W, "height": H}
 
 
@@ -149,7 +153,19 @@ def diarist():
     TIP: remember to commit 'lasers.pew' and push it to your repo, otherwise
          the test will have nothing to look at.
     TIP: this might come in handy if you need to hack a 3d print file in the future.
+
     """
+    #Open File and find M10 P1 instances
+    data = open(LOCAL + "/Trispokedovetiles(laser).gcode").read()
+    Laser_number = data.count("M10 P1")
+
+    #Write it to file
+    file_path = LOCAL+"/laser.pew" 
+    mode = "w"  # from the docs
+    laser = open(file_path, mode)
+    laser.write(Laser_number)
+    laser.close()
+
     pass
 
 
