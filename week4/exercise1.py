@@ -161,7 +161,7 @@ def diarist():
     
     #Write it to file
     laser = open("lasers.pew", "w")
-    laser.write(str(Laser_number))
+    laser.write(str(Laser_number))clea
     laser.close()
 
 
