@@ -160,12 +160,10 @@ def diarist():
     Laser_number = data.count("M10 P1")
     
     #Write it to file
-    mode = "w"  # from the docs
-    laser = open("/lasers.pew", mode)
+    laser = open("lasers.pew", "w")
     laser.write(str(Laser_number))
     laser.close()
 
-    pass
 
 
 if __name__ == "__main__":
