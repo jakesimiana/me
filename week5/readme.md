@@ -1,1 +1,2 @@
 TODO: Reflect on what you learned this week and what is still unclear.
+I learnt how to code abit quicker and neater this week. I also played around with Jupiter notebook and it was pretty noice :)
