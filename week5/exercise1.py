@@ -208,14 +208,18 @@ def wordy_pyramid(api_key):
 def get_a_word_of_length_n(length):
     NumberPyramid = []
     url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={len}"
-    
-    #Go through all the numbers and search the word length of each number in the table
-    fullurl = url.format(len=length)
-    #Search URL
-    pull = requests.get(fullurl)   
-    #Pull the word data and change it to text     
-    data = pull.text
-    NumberPyramid.append(data)
+    a = range(3, 21, 2)
+    b = range(20, 3, -2)
+    a.extend(b)
+
+    for i in a:
+        #Go through all the numbers and search the word length of each number in the table
+        fullurl = url.format(len=i)
+        #Search URL
+        pull = requests.get(fullurl)   
+        #Pull the word data and change it to text     
+        data = pull.text
+        NumberPyramid.append(data)
     return NumberPyramid
 
 
