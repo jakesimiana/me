@@ -1,4 +1,5 @@
 import math
+import requests
 
 
 # -*- coding: UTF-8 -*-
@@ -177,64 +178,57 @@ def triangle_master(base, height, return_diagram=False, return_dictionary=False)
 
 def wordy_pyramid(api_key):
     import requests
+    a = list(range(3, 21, 2))
+    b = list(range(20, 3, -2))
+    a.extend(b)
+    word_pyramid = list_of_words_with_lengths(a)
+    return word_pyramid
 
-    baseURL = (
-        "http://api.wordnik.com/v4/words.json/randomWords?"
-        "api_key={api_key}"
-        "&minLength={length}"
-        "&maxLength={length}"
-        "&limit=1"
-    )
-    pyramid_list = []
-    for i in range(3, 21, 2):
-        url = baseURL.format(api_key="", length=i)
-        r = requests.get(url)
-        if r.status_code is 200:
-            message = r.json()[0]["word"]
-            pyramid_list.append(message)
-        else:
-            print("failed a request", r.status_code, i)
-    for i in range(20, 3, -2):
-        url = baseURL.format(api_key="", length=i)
-        r = requests.get(url)
-        if r.status_code is 200:
-            message = r.json()[0]["word"]
-            pyramid_list.append(message)
-        else:
-            print("failed a request", r.status_code, i)
-    return pyramid_list
 
 
 def get_a_word_of_length_n(length):
-    NumberPyramid = []
-    url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={len}"
-    a = range(3, 21, 2)
-    b = range(20, 3, -2)
-    a.extend(b)
+    
+    if 3 < int(length) < 20:
+        url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={len}"
 
-    for i in a:
         #Go through all the numbers and search the word length of each number in the table
-        fullurl = url.format(len=i)
+        fullurl = url.format(len=length)
         #Search URL
         pull = requests.get(fullurl)   
         #Pull the word data and change it to text     
-        data = pull.text
-        NumberPyramid.append(data)
-    return NumberPyramid
+        word = pull.text
+        return word
+    else:
+        return 'number is not between the boundary'
+   
+        
+
+
+            
+
+    
+
+    
+    
+    
+    
 
 
 def list_of_words_with_lengths(list_of_lengths):
     NumberPyramid = []
-    url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={len}"
-    
-    #Go through all the numbers and search the word length of each number in the table
-    fullurl = url.format(len=length)
-    #Search URL
-    pull = requests.get(fullurl)   
-    #Pull the word data and change it to text     
-    data = pull.text
-    NumberPyramid.append(data)
+    for i in list_of_lengths:
+            NumberPyramid.append(get_a_word_of_length_n(i))
     return NumberPyramid
+
+    
+   
+def list_of_words_with_lengths_but_as_a_list_comprehension(list_of_lengths):
+    NumberPyramid = []
+    for i in list_of_lengths:
+        NumberPyramid.append(get_a_word_of_length_n(i))
+    return NumberPyramid
+
+
 
 
 if __name__ == "__main__":
