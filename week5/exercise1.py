@@ -188,11 +188,11 @@ def wordy_pyramid(api_key):
 
 def get_a_word_of_length_n(length):
     
-    if 3 < int(length) < 20:
+    if 2 < int(length) < 21:
         url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={len}"
 
         #Go through all the numbers and search the word length of each number in the table
-        fullurl = url.format(len=length)
+        fullurl = url.format(len=int(length))
         #Search URL
         pull = requests.get(fullurl)   
         #Pull the word data and change it to text     
@@ -200,24 +200,13 @@ def get_a_word_of_length_n(length):
         return word
     else:
         return 'number is not between the boundary'
-   
-        
-
-
-            
-
-    
-
-    
-    
-    
     
 
 
 def list_of_words_with_lengths(list_of_lengths):
     NumberPyramid = []
     for i in list_of_lengths:
-            NumberPyramid.append(get_a_word_of_length_n(i))
+        NumberPyramid.append(get_a_word_of_length_n(i))
     return NumberPyramid
 
     
