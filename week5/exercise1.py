@@ -49,9 +49,9 @@ def do_bunch_of_bad_things():
 # return a list of countdown messages, much like in the bad function above.
 # It should say something different in the last message.
 def countdown(message, start, stop, completion_message):
-    numbers = list(range(start-stop+1,stop-stop,-1))
-    for a in numbers:
-        print(message+ " " +str(a))
+    while start >= stop:
+        print(message + " " + str(start))
+        start = start - 1
     print(completion_message)
 
 
@@ -176,11 +176,12 @@ def triangle_master(base, height, return_diagram=False, return_dictionary=False)
         print("You're an odd one, you don't want anything!")
 
 
-def wordy_pyramid(api_key):
+def wordy_pyramid():
     import requests
     a = list(range(3, 21, 2))
     b = list(range(20, 3, -2))
     a.extend(b)
+    wordy_pyramid = []
     word_pyramid = list_of_words_with_lengths(a)
     return word_pyramid
 
@@ -188,18 +189,18 @@ def wordy_pyramid(api_key):
 
 def get_a_word_of_length_n(length):
     
-    if 2 < int(length) < 21:
+    if type(length) == int and length >= 3:
         url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={len}"
 
         #Go through all the numbers and search the word length of each number in the table
-        fullurl = url.format(len=int(length))
+        fullurl = url.format(len=(length))
         #Search URL
         pull = requests.get(fullurl)   
         #Pull the word data and change it to text     
         word = pull.text
         return word
     else:
-        return 'number is not between the boundary'
+        return None
     
 
 
