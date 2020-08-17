@@ -1,2 +1,2 @@
 TODO: Reflect on what you learned this week and what is still unclear.
-This week I did the quiz and it wont show up on the marks page
+This week I did the quiz and it wont show up on the marks page. The quiz was quite fun and challenging, and having a time pressure element was an interesting experience at the least.

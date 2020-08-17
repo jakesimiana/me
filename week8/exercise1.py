@@ -28,25 +28,9 @@ def dictionary_please() -> dict:
     
     return cool_big_dic
 
-def not_number_rejector(message):
-    """Ask for a number repeatedly until actually given one.
-
-    Ask for a number, and if the response is actually NOT a number 
-    (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
-    When you do get a number, return it.
-    """
-    numberask = str(input('Hi please enter a number: '))
-
-    while True:
-        if numberask.isdigit():
-            print('Thank you ' + str(numberask) + ' is a beautiful number')
-            return int(numberask)
-        else:
-            numberask = str(input(str(numberask) + ' is not a number, please re-enter a new number: '))
 
 def is_it_5(some_number) -> bool:
     """Returns True if the argument passed is 5, otherwise returns False."""
-    not_number_rejector(some_number)
     well_is_it = False
     if some_number == 5:
         well_is_it = True

@@ -1,2 +1,2 @@
 TODO: Reflect on what you learned this week and what is still unclear.
-Today I learn how to scrape data from json files and websites.I also learnt how to read and write local files aswell.
+Today I learn how to scrape data from json files and websites.I also learnt how to read and write local files aswell. I played around with the pokemon function in the workshop and found it quite interesting how powerful a small script of code can be in doing quite time straining, difficult tasks.

@@ -1,1 +1,2 @@
 TODO: Reflect on what you learned this week and what is still unclear.
+This week i further developed my Open Data Project on German car sales from ebay in 2016. I have made some basic charts including a couple of pie charts and some bar graphs for some basic info in the csv. I want to further clean up the dat for some more insightful representations.

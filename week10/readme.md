@@ -1,1 +1,2 @@
 TODO: Reflect on what you learned this week and what is still unclear.
+This week I found a German Shape map file online. I chucked it in my Jupyter notebook with Geopandas and started playing around with the map. I noticed it takes a really long time to graph out the whole of germany so i aim to reduce my scope to a couple of neighbourhoods. I am also having a bit of trouble plotting my car data CSV onto the map, but i hope to achieve this with some hefty lambda functions.

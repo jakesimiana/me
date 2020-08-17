@@ -1,3 +1,2 @@
 TODO: Reflect on what you learned this week and what is still unclear.
-
-Today I used if statements and learnt about loops. I need to touch up on embedded for loops and using lists in loops
+Today I used if statements and learnt about loops. I need to touch up on embedded for loops and using lists in loops as i was having alot of trouble understanding what was going where. I also vaguely learn about debugging in vscode which proved extremely helpful in visualising variables and progressing step by step through code.
